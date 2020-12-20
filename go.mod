@@ -1,4 +1,4 @@
-module github.com/matrix-org/gomatrixserverlib
+module github.com/ReidAnderson/gomatrixserverlib
 
 require (
 	github.com/frankban/quicktest v1.7.2 // indirect
