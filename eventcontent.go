@@ -217,6 +217,11 @@ type JoinRuleContent struct {
 	JoinRule string `json:"join_rule"`
 }
 
+// SelfDestructContent is the JSON content of a org.matrix.self_destruct and org.matrix.self_destruct_after event
+type SelfDestructContent struct {
+	SelfDestruct string `json:"self_destruct"`
+}
+
 // NewJoinRuleContentFromAuthEvents loads the join rule content from the join rules event in the auth event.
 // Returns an error if there was an error loading the join rule event or parsing the content.
 func NewJoinRuleContentFromAuthEvents(authEvents AuthEventProvider) (c JoinRuleContent, err error) {
