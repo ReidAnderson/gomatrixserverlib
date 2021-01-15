@@ -219,7 +219,8 @@ type JoinRuleContent struct {
 
 // SelfDestructContent is the JSON content of a org.matrix.self_destruct and org.matrix.self_destruct_after event
 type SelfDestructContent struct {
-	SelfDestruct string `json:"self_destruct"`
+	SelfDestruct      int64 `json:"org.matrix.self_destruct"`
+	SelfDestructAfter int64 `json:"org.matrix.self_destruct_after"`
 }
 
 // NewJoinRuleContentFromAuthEvents loads the join rule content from the join rules event in the auth event.

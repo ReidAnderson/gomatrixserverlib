@@ -931,21 +931,6 @@ func (e *Event) JoinRule() (string, error) {
 	return content.JoinRule, nil
 }
 
-// JoinRule returns the value of the content.join_rule field if this event
-// is an "m.room.join_rules" event.
-// Returns an error if the event is not a m.room.join_rules event or if the content
-// is not valid m.room.join_rules content.
-func (e *Event) SelfDestruct() (string, error) {
-	if !e.StateKeyEquals("") {
-		return "", fmt.Errorf("gomatrixserverlib: SelfDestruct() event is not a org.matrix.self_destruct event, bad state key")
-	}
-	var content JoinRuleContent
-	if err := e.extractContent(MRoomJoinRules, &content); err != nil {
-		return "", err
-	}
-	return content.JoinRule, nil
-}
-
 // HistoryVisibility returns the value of the content.history_visibility field if this event
 // is an "m.room.history_visibility" event.
 // Returns an error if the event is not a m.room.history_visibility event or if the content
